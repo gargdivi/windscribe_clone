@@ -1,0 +1,336 @@
+/* Download Page Styles */
+.download-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.5;
+}
+
+.download-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.download-hero h1 {
+    color: #fff;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.download-hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Platform Cards */
+.platforms-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.platform-card {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.platform-card:hover::before {
+    transform: scaleX(1);
+}
+
+.platform-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.platform-card:hover .platform-icon {
+    transform: scale(1.1);
+}
+
+.platform-icon i {
+    font-size: 2.5rem;
+    color: #4CAF50;
+}
+
+.platform-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+.platform-card p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.download-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.download-btn i {
+    font-size: 1.2rem;
+}
+
+/* Version Info */
+.version-info {
+    background: white;
+    padding: 80px 20px;
+}
+
+.version-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.version-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.version-header h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+}
+
+.version-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.version-list {
+    display: grid;
+    gap: 20px;
+}
+
+.version-item {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.version-item:hover {
+    transform: translateX(10px);
+}
+
+.version-details {
+    flex: 1;
+}
+
+.version-details h3 {
+    font-size: 1.2rem;
+    color: #1a1a2e;
+    margin-bottom: 5px;
+}
+
+.version-details p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.version-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.version-actions a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+}
+
+.version-actions a:hover {
+    color: #45a049;
+}
+
+/* System Requirements */
+.requirements-section {
+    padding: 80px 20px;
+    background: #f8f9fa;
+}
+
+.requirements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.requirement-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.requirement-card h3 {
+    font-size: 1.3rem;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.requirement-card h3 i {
+    color: #4CAF50;
+}
+
+.requirement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.requirement-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+}
+
+.requirement-list li i {
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .download-hero h1 {
+        font-size: 2rem;
+    }
+
+    .download-hero p {
+        font-size: 1rem;
+    }
+
+    .version-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .version-actions {
+        justify-content: center;
+    }
+
+    .platforms-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .download-hero {
+        padding: 60px 20px;
+    }
+
+    .platform-card {
+        padding: 30px;
+    }
+
+    .download-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .version-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .version-actions a {
+        justify-content: center;
+    }
+} 

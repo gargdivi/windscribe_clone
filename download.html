@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download - Windscribe VPN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .download-hero {
+            padding: 120px 2rem 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 115, 230, 0.1), rgba(0, 163, 255, 0.1));
+        }
+
+        .download-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .platform-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .platform-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .platform-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .platform-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            min-height: 3em;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .version-info {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .browser-extensions {
+            margin-top: 4rem;
+        }
+
+        .browser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .browser-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .browser-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .browser-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .browser-card .chrome { color: #4285F4; }
+        .browser-card .firefox { color: #FF9500; }
+        .browser-card .edge { color: #0078D7; }
+        .browser-card .opera { color: #FF1B2D; }
+
+        .system-requirements {
+            margin-top: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .requirement-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .requirement-item div {
+            flex: 1;
+        }
+
+        .requirement-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .requirement-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .browser-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://via.placeholder.com/150x50/0073E6/FFFFFF?text=Windscribe" alt="Windscribe Logo">
+                </a>
+            </div>
+            <button class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="download.html" class="active">Download</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="signup.html" class="cta-button">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Download Hero Section -->
+    <section class="download-hero">
+        <h1>Download Windscribe VPN</h1>
+        <p>Get started with Windscribe on your favorite platform</p>
+    </section>
+
+    <!-- Download Options -->
+    <div class="download-container">
+        <div class="platform-grid">
+            <div class="platform-card" data-platform="windows">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/100x100/0073E6/FFFFFF?text=Windows" alt="Windows">
+                </div>
+                <h3>Windows</h3>
+                <p>Compatible with Windows 7, 8, 10, and 11</p>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download for Windows
+                </a>
+                <div class="version-info">Version 2.0.0 (64-bit)</div>
+            </div>
+
+            <div class="platform-card" data-platform="mac">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/100x100/0073E6/FFFFFF?text=Mac" alt="Mac">
+                </div>
+                <h3>macOS</h3>
+                <p>Compatible with macOS 10.13 and later</p>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download for Mac
+                </a>
+                <div class="version-info">Version 2.0.0 (Universal)</div>
+            </div>
+
+            <div class="platform-card" data-platform="linux">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/100x100/0073E6/FFFFFF?text=Linux" alt="Linux">
+                </div>
+                <h3>Linux</h3>
+                <p>Available for Ubuntu, Debian, and Fedora</p>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i>
+                    Download for Linux
+                </a>
+                <div class="version-info">Version 2.0.0</div>
+            </div>
+
+            <div class="platform-card" data-platform="android">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/100x100/0073E6/FFFFFF?text=Android" alt="Android">
+                </div>
+                <h3>Mobile Apps</h3>
+                <p>Available for iOS and Android devices</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" style="margin-bottom: 1rem;">
+                        <i class="fab fa-app-store-ios"></i>
+                        App Store
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fab fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+
+            <div class="platform-card" data-platform="ios">
+                <div class="platform-icon">
+                    <img src="https://via.placeholder.com/100x100/0073E6/FFFFFF?text=iOS" alt="iOS">
+                </div>
+                <h3>Mobile Apps</h3>
+                <p>Available for iOS and Android devices</p>
+                <div class="download-buttons">
+                    <a href="#" class="download-btn" style="margin-bottom: 1rem;">
+                        <i class="fab fa-app-store-ios"></i>
+                        App Store
+                    </a>
+                    <a href="#" class="download-btn">
+                        <i class="fab fa-google-play"></i>
+                        Google Play
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Browser Extensions -->
+        <div class="browser-extensions">
+            <h2>Browser Extensions</h2>
+            <p>Protect your browsing with our lightweight browser extensions</p>
+            <div class="browser-grid">
+                <div class="browser-card">
+                    <i class="fab fa-chrome browser-icon chrome"></i>
+                    <h4>Chrome</h4>
+                    <a href="#" class="download-btn">Add to Chrome</a>
+                </div>
+                <div class="browser-card">
+                    <i class="fab fa-firefox browser-icon firefox"></i>
+                    <h4>Firefox</h4>
+                    <a href="#" class="download-btn">Add to Firefox</a>
+                </div>
+                <div class="browser-card">
+                    <i class="fab fa-edge browser-icon edge"></i>
+                    <h4>Edge</h4>
+                    <a href="#" class="download-btn">Add to Edge</a>
+                </div>
+                <div class="browser-card">
+                    <i class="fab fa-opera browser-icon opera"></i>
+                    <h4>Opera</h4>
+                    <a href="#" class="download-btn">Add to Opera</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Requirements -->
+        <div class="system-requirements">
+            <h2>System Requirements</h2>
+            <div class="requirements-grid">
+                <div class="requirement-item">
+                    <i class="fas fa-microchip"></i>
+                    <div>
+                        <h4>Processor</h4>
+                        <p>1 GHz or faster processor</p>
+                    </div>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-memory"></i>
+                    <div>
+                        <h4>Memory</h4>
+                        <p>2 GB RAM minimum</p>
+                    </div>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-hdd"></i>
+                    <div>
+                        <h4>Storage</h4>
+                        <p>100 MB available disk space</p>
+                    </div>
+                </div>
+                <div class="requirement-item">
+                    <i class="fas fa-network-wired"></i>
+                    <div>
+                        <h4>Internet</h4>
+                        <p>Broadband internet connection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="support.html">Help Center</a></li>
+                    <li><a href="support.html">Contact Us</a></li>
+                    <li><a href="#">Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Windscribe Inc. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html> 
