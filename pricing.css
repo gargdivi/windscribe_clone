@@ -117,7 +117,7 @@ input:checked + .toggle-slider:before {
     border-radius: 15px;
     padding: 40px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: none;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
@@ -142,8 +142,8 @@ input:checked + .toggle-slider:before {
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
+    box-shadow: var(--shadow-md);
 }
 
 .pricing-card.featured:hover {
@@ -204,12 +204,12 @@ input:checked + .toggle-slider:before {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s ease, transform 0.3s ease;
+    transition: none;
 }
 
 .pricing-cta:hover {
     background: #45a049;
-    transform: translateY(-2px);
+    transform: none;
 }
 
 /* Comparison Table */
@@ -373,4 +373,51 @@ input:checked + .toggle-slider:before {
     input:checked + .toggle-slider:before {
         transform: translateX(22px);
     }
+}
+
+/* Remove cursor animations from plan buttons */
+.plan-button {
+    transition: none;
+    cursor: default;
+}
+
+.plan-button:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove cursor animations from toggle switch */
+.switch {
+    transition: none;
+}
+
+.switch:hover {
+    transform: none;
+}
+
+/* Remove cursor animations from feature items */
+.feature-item {
+    transition: none;
+}
+
+.feature-item:hover {
+    transform: none;
+}
+
+.feature-item i {
+    transition: none;
+}
+
+.feature-item:hover i {
+    transform: none;
+}
+
+/* Remove cursor animations from links */
+a {
+    transition: none;
+}
+
+a:hover {
+    transform: none;
+    color: inherit;
 } 

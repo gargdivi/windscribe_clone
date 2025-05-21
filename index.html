@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windscribe Clone</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="icons8-windscribe-48.png">
+    <link rel="shortcut icon" type="image/png" href="icons8-windscribe-48.png">
+    <link rel="apple-touch-icon" href="icons8-windscribe-48.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,7 +17,9 @@
     <header>
         <nav>
             <div class="logo">
-                <img src="https://via.placeholder.com/150x50/0073E6/FFFFFF?text=Windscribe" alt="Windscribe Logo">
+                <a href="index.html">
+                    <img src="images/web/icons8-windscribe-color-150.png" alt="Windscribe Logo">
+                </a>
             </div>
             <button class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -57,52 +62,144 @@
             <p>Experience the best VPN service with our powerful features</p>
         </div>
         <div class="feature">
-            <img src="https://via.placeholder.com/400x300/0073E6/FFFFFF?text=High-Speed+Servers" alt="High-Speed Servers">
+            <i class="fas fa-server feature-icon"></i>
             <h3>High-Speed Servers</h3>
             <p>Access servers in over 60 countries with unlimited bandwidth and no speed restrictions.</p>
         </div>
         <div class="feature">
-            <img src="https://via.placeholder.com/400x300/0073E6/FFFFFF?text=Secure+Encryption" alt="Secure Encryption">
+            <i class="fas fa-lock feature-icon"></i>
             <h3>Secure Encryption</h3>
             <p>Military-grade AES-256 encryption keeps your data safe and private at all times.</p>
         </div>
         <div class="feature">
-            <img src="https://via.placeholder.com/400x300/0073E6/FFFFFF?text=No+Logs+Policy" alt="No Logs Policy">
+            <i class="fas fa-user-shield feature-icon"></i>
             <h3>No Logs Policy</h3>
             <p>We don't track, collect, or share any of your personal data or online activity.</p>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing">
+    <!-- Pricing Plans Section -->
+    <section id="pricing-plans" class="pricing-section">
         <div class="section-title">
-            <h2>Choose Your Plan</h2>
-            <p>Select the perfect plan for your needs</p>
+            <h2>Choose Your Perfect Plan</h2>
+            <p>Select the plan that best fits your needs</p>
         </div>
-        <div class="pricing-container">
-            <div class="pricing-plan">
-                <h3>Free Plan</h3>
-                <div class="price">$0<span>/month</span></div>
-                <ul>
+        
+        <div class="pricing-toggle">
+            <span>Monthly</span>
+            <label class="switch">
+                <input type="checkbox" id="billing-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span>Yearly <span class="save-badge">Save 20%</span></span>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h3>Free Plan</h3>
+                    <div class="price">
+                        <div class="monthly-price">
+                            <span class="amount">$0</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="yearly-price">
+                            <span class="amount">$0</span>
+                            <span class="period">/year</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
                     <li><i class="fas fa-check"></i> 10GB Monthly Data</li>
                     <li><i class="fas fa-check"></i> Access to 10 Countries</li>
                     <li><i class="fas fa-check"></i> Basic Support</li>
-                    <li><i class="fas fa-check"></i> Ad Blocker</li>
+                    <li><i class="fas fa-check"></i> Ad & Tracker Blocker</li>
+                    <li><i class="fas fa-check"></i> Unlimited Devices</li>
                 </ul>
-                <button onclick="window.location.href='signup.html'">Get Started</button>
+                <a href="signup.html" class="plan-button">Get Started</a>
             </div>
-            <div class="pricing-plan featured">
+
+            <!-- Pro Plan -->
+            <div class="pricing-card featured">
                 <div class="popular-tag">Most Popular</div>
-                <h3>Premium Plan</h3>
-                <div class="price">$4.08<span>/month</span></div>
-                <ul>
+                <div class="plan-header">
+                    <h3>Pro Plan</h3>
+                    <div class="price">
+                        <div class="monthly-price">
+                            <span class="amount">$4.08</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="yearly-price">
+                            <span class="amount">$39.20</span>
+                            <span class="period">/year</span>
+                            <span class="save-badge">Save 20%</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
                     <li><i class="fas fa-check"></i> Unlimited Data</li>
                     <li><i class="fas fa-check"></i> Access to 60+ Countries</li>
                     <li><i class="fas fa-check"></i> Priority Support</li>
-                    <li><i class="fas fa-check"></i> Ad Blocker & Firewall</li>
+                    <li><i class="fas fa-check"></i> Ad & Tracker Blocker</li>
                     <li><i class="fas fa-check"></i> Static IP</li>
+                    <li><i class="fas fa-check"></i> Port Forwarding</li>
+                    <li><i class="fas fa-check"></i> Unlimited Devices</li>
                 </ul>
-                <button onclick="window.location.href='signup.html'">Get Premium</button>
+                <a href="signup.html" class="plan-button featured">Get Pro</a>
+            </div>
+
+            <!-- Business Plan -->
+            <div class="pricing-card">
+                <div class="plan-header">
+                    <h3>Business Plan</h3>
+                    <div class="price">
+                        <div class="monthly-price">
+                            <span class="amount">$8.00</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <div class="yearly-price">
+                            <span class="amount">$76.80</span>
+                            <span class="period">/year</span>
+                            <span class="save-badge">Save 20%</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Everything in Pro</li>
+                    <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                    <li><i class="fas fa-check"></i> Custom Solutions</li>
+                    <li><i class="fas fa-check"></i> Team Management</li>
+                    <li><i class="fas fa-check"></i> Priority Support</li>
+                    <li><i class="fas fa-check"></i> Custom Deployment</li>
+                </ul>
+                <a href="signup.html" class="plan-button">Contact Sales</a>
+            </div>
+        </div>
+
+        <div class="pricing-features">
+            <h3>All Plans Include</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Military-Grade Encryption</h4>
+                    <p>AES-256 encryption for maximum security</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-shield"></i>
+                    <h4>No Logs Policy</h4>
+                    <p>We don't track or store your data</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h4>Global Network</h4>
+                    <p>Servers in 60+ countries</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Always here to help you</p>
+                </div>
             </div>
         </div>
     </section>

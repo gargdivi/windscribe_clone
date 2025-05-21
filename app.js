@@ -122,3 +122,28 @@ document.querySelectorAll('.pricing-plan').forEach(plan => {
         plan.style.transform = 'translateY(0)';
     });
 });
+
+// Pricing Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const billingToggle = document.getElementById('billing-toggle');
+    const pricingSection = document.querySelector('.pricing-section');
+    const monthlyLabel = billingToggle?.parentElement.querySelector('span:first-child');
+    const yearlyLabel = billingToggle?.parentElement.querySelector('span:last-child');
+
+    if (billingToggle) {
+        billingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                pricingSection.classList.add('yearly-selected');
+                monthlyLabel?.classList.remove('active');
+                yearlyLabel?.classList.add('active');
+            } else {
+                pricingSection.classList.remove('yearly-selected');
+                monthlyLabel?.classList.add('active');
+                yearlyLabel?.classList.remove('active');
+            }
+        });
+
+        // Set initial state
+        monthlyLabel?.classList.add('active');
+    }
+});

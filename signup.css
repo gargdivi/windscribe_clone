@@ -97,7 +97,7 @@
     background: #f8f9fa;
     border-radius: 8px;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .input-wrapper label {
@@ -106,7 +106,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: #666;
-    transition: all 0.3s ease;
+    transition: none;
     pointer-events: none;
 }
 
@@ -116,7 +116,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: #666;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .input-line {
@@ -127,13 +127,13 @@
     height: 2px;
     background: var(--gradient-primary);
     transform: scaleX(0);
-    transition: transform 0.3s ease;
+    transition: none;
 }
 
 .input-wrapper input:focus,
 .input-wrapper input:valid {
     background: white;
-    box-shadow: var(--shadow-sm);
+    box-shadow: none;
 }
 
 .input-wrapper input:focus + label,
@@ -163,12 +163,12 @@
     background: none;
     border: none;
     color: #666;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    cursor: default;
+    transition: none;
 }
 
 .toggle-password:hover {
-    color: var(--primary-color);
+    color: inherit;
 }
 
 /* Password Strength Indicator */
@@ -188,7 +188,7 @@
     height: 100%;
     width: 0;
     background: var(--gradient-primary);
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition: none;
 }
 
 .strength-text {
@@ -222,7 +222,7 @@
     border-radius: 4px;
     margin-right: 10px;
     position: relative;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .custom-checkbox:hover .checkmark {
@@ -261,14 +261,14 @@
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: 600;
-    cursor: pointer;
+    cursor: default;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: none;
+    box-shadow: none;
 }
 
 .btn-loader {
@@ -283,7 +283,7 @@
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: none;
 }
 
 .submit-btn.loading .btn-text {
@@ -348,8 +348,8 @@
     background: white;
     color: #333;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    cursor: default;
+    transition: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -359,7 +359,7 @@
 .social-btn:hover {
     background: #f8f9fa;
     border-color: #ccc;
-    transform: translateY(-2px);
+    transform: none;
 }
 
 .social-btn.google:hover {
@@ -486,4 +486,68 @@
     .cursor-trail {
         display: none;
     }
+}
+
+/* Remove cursor animations from form elements */
+.form-group input,
+.form-group select {
+    transition: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove cursor animations from buttons */
+.submit-btn {
+    transition: none;
+    cursor: default;
+}
+
+.submit-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove cursor animations from social buttons */
+.social-btn {
+    transition: none;
+    cursor: default;
+}
+
+.social-btn:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove cursor animations from links */
+a {
+    transition: none;
+}
+
+a:hover {
+    transform: none;
+    color: inherit;
+}
+
+/* Remove cursor animations from form validation */
+.form-group.error input {
+    transition: none;
+}
+
+.form-group.success input {
+    transition: none;
+}
+
+/* Remove cursor animations from password toggle */
+.password-toggle {
+    transition: none;
+    cursor: default;
+}
+
+.password-toggle:hover {
+    transform: none;
+    color: inherit;
 } 

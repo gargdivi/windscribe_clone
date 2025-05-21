@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - Windscribe VPN</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="icons8-windscribe-48.png">
+    <link rel="shortcut icon" type="image/png" href="icons8-windscribe-48.png">
+    <link rel="apple-touch-icon" href="icons8-windscribe-48.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -179,6 +182,200 @@
                 overflow-x: auto;
             }
         }
+
+        /* Pricing Toggle Styles */
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem auto;
+            max-width: 300px;
+            padding: 1rem;
+            background: white;
+            border-radius: 50px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .monthly-label, .yearly-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #666;
+            transition: opacity 0.3s ease;
+        }
+
+        .yearly-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .save-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* Pricing Card Styles */
+        .plan-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plan-card.featured {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .plan-card.featured:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .plan-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .plan-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .price .amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .price .period {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .price .save-badge {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .features-list i {
+            color: var(--primary-color);
+        }
+
+        .plan-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .plan-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .plan-btn.featured {
+            background: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -189,7 +386,7 @@
         <nav>
             <div class="logo">
                 <a href="index.html">
-                    <img src="logo.png" alt="Windscribe Logo">
+                    <img src="images/web/icons8-windscribe-color-150.png" alt="Windscribe Logo">
                 </a>
             </div>
             <button class="menu-btn">
@@ -211,24 +408,95 @@
         <p>Select the plan that best fits your needs</p>
     </section>
 
+    <!-- Pricing Toggle -->
+    <div class="pricing-toggle">
+        <span class="monthly-label">Monthly</span>
+        <label class="toggle-switch">
+            <input type="checkbox" id="billing-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span class="yearly-label">Yearly <span class="save-badge">Save 20%</span></span>
+    </div>
+
     <!-- Pricing Plans -->
     <div class="pricing-container">
         <div class="pricing-grid">
-            <div class="pricing-plan">
+            <div class="plan-card" data-plan="free">
+                <div class="plan-icon">
+                    <i class="fas fa-user"></i>
+                </div>
                 <h3>Free Plan</h3>
-                <div class="price">$0<span>/month</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> 10GB Monthly Data</li>
-                    <li><i class="fas fa-check"></i> Access to 10 Countries</li>
-                    <li><i class="fas fa-check"></i> Basic Support</li>
+                <div class="price">
+                    <div class="monthly-price">
+                        <span class="amount">$0</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-price" style="display: none;">
+                        <span class="amount">$0</span>
+                        <span class="period">/year</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> 10GB Monthly Bandwidth</li>
+                    <li><i class="fas fa-check"></i> Access to 10 Locations</li>
+                    <li><i class="fas fa-check"></i> Basic Security Features</li>
                     <li><i class="fas fa-check"></i> Ad Blocker</li>
-                    <li><i class="fas fa-check"></i> Basic Encryption</li>
                 </ul>
-                <button onclick="window.location.href='signup.html'">Get Started</button>
+                <a href="signup.html" class="plan-btn">Get Started</a>
             </div>
 
-            <div class="pricing-plan featured">
+            <div class="plan-card featured" data-plan="pro">
                 <div class="popular-tag">Most Popular</div>
+                <div class="plan-icon">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Pro Plan</h3>
+                <div class="price">
+                    <div class="monthly-price">
+                        <span class="amount">$9</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-price" style="display: none;">
+                        <span class="amount">$86.40</span>
+                        <span class="period">/year</span>
+                        <span class="save-badge">Save 20%</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
+                    <li><i class="fas fa-check"></i> Access to All Locations</li>
+                    <li><i class="fas fa-check"></i> Advanced Security Features</li>
+                    <li><i class="fas fa-check"></i> Ad & Tracker Blocker</li>
+                </ul>
+                <a href="signup.html" class="plan-btn featured">Get Pro</a>
+            </div>
+
+            <div class="plan-card" data-plan="business">
+                <div class="plan-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3>Business Plan</h3>
+                <div class="price">
+                    <div class="monthly-price">
+                        <span class="amount">$8.99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="yearly-price" style="display: none;">
+                        <span class="amount">$86.30</span>
+                        <span class="period">/year</span>
+                        <span class="save-badge">Save 20%</span>
+                    </div>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fas fa-check"></i> Everything in Pro</li>
+                    <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                    <li><i class="fas fa-check"></i> Team Management</li>
+                    <li><i class="fas fa-check"></i> Custom Solutions</li>
+                </ul>
+                <a href="signup.html" class="plan-btn">Contact Sales</a>
+            </div>
+
+            <div class="pricing-plan">
                 <h3>Premium Plan</h3>
                 <div class="price">$4.08<span>/month</span></div>
                 <ul class="pricing-features">
@@ -240,20 +508,6 @@
                     <li><i class="fas fa-check"></i> Advanced Encryption</li>
                 </ul>
                 <button onclick="window.location.href='signup.html'">Get Premium</button>
-            </div>
-
-            <div class="pricing-plan">
-                <h3>Business Plan</h3>
-                <div class="price">$8.99<span>/month</span></div>
-                <ul class="pricing-features">
-                    <li><i class="fas fa-check"></i> Everything in Premium</li>
-                    <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
-                    <li><i class="fas fa-check"></i> Team Management</li>
-                    <li><i class="fas fa-check"></i> Custom Solutions</li>
-                    <li><i class="fas fa-check"></i> Priority Support 24/7</li>
-                    <li><i class="fas fa-check"></i> Custom Deployment</li>
-                </ul>
-                <button onclick="window.location.href='signup.html'">Contact Sales</button>
             </div>
         </div>
 
